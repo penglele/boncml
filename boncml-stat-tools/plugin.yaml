@@ -1,0 +1,9 @@
+name: boncml-stat-tools
+version: 0.3.0
+description: "BONCML statistical analysis tools — 3 tools in 2 toolsets: inspect_dataset + propose_analysis_plan (boncml-orchestrator), execute_analysis (boncml-runner). 20 algorithms via registry."
+author: ""
+provides_tools:
+  - inspect_dataset
+  - propose_analysis_plan
+  - execute_analysis
+requires_env: []
