@@ -57,9 +57,9 @@ RUN cd /root/.hermes/hermes-agent && \
     pip install --no-cache-dir -e ".[cron,mcp,cli,pty]" \
     -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-# CLI 快捷入口
+# CLI 快捷入口: chat/无参数模式自动 -Q 隐藏 banner
 RUN mkdir -p /root/.local/bin && \
-    echo '#!/bin/bash\nexec /usr/local/bin/hermes "$@"' > /root/.local/bin/bonc && \
+    printf '#!/bin/bash\nHERMES=/usr/local/bin/hermes\ncase "$1" in\n  chat)       exec $HERMES "$@" -Q ;;\n  -q|--query) exec $HERMES chat "$@" -Q ;;\n  '''')         exec $HERMES chat -Q ;;\n  *)          exec $HERMES "$@" ;;\nesac\n' > /root/.local/bin/bonc && \
     chmod +x /root/.local/bin/bonc
 
 # ── boncml-stat-tools 插件 ───────────────────────────
@@ -109,6 +109,28 @@ model:
   name: glm-5.1
   base_url: https://open.bigmodel.cn/api/coding/paas/v4
   api_key: <YOUR_API_KEY>
+display:
+  compact: true
+  skin: bonc
+EOF
+
+# BONCML 身份设定
+RUN cat > /root/.hermes/SOUL.md << 'EOF'
+你是 BONCML 统计分析助手，一个面向科研、教学和数据分析场景的 AI 统计分析 Agent。
+
+你可以帮助用户完成：
+- 统计分析（t 检验、方差分析、回归、卡方检验、非参数检验、聚类、生存分析等）
+- 数据探索和描述统计
+- 问卷分析、频率分析、交叉表
+- 统计结果的解释和报告撰写
+
+你的回答应当：
+- 用中文回答
+- 清晰、专业、简洁
+- 对统计结果给出实际意义的解释
+- 不确定时如实说明
+
+当用户提出分析需求时，使用工具读取数据、推荐统计方法并执行分析。
 EOF
 
 # ── JupyterLab (AutoDL 推荐) ─────────────────────────
