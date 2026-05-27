@@ -59,7 +59,7 @@ metadata:
 | run_oneway | 单因素方差分析 | 多组均值比较 |
 | run_ttest | t 检验 | 配对/独立/单样本均值检验 |
 | run_frequencies | 频率分析 | 频率表、分布统计量 |
-| run_crstab | 交叉表分析 | 交叉分类 + 卡方检验 |
+| run_crstab | 交叉表分析 | 交叉分类频数统计（列联表） |
 | run_nptest | 非参数检验 | Mann-Whitney、Wilcoxon 等 |
 | run_acf | 自相关分析 | 序列自相关性判断 |
 | run_tsplot | 时间序列图 | 时序走势与基本特征 |
