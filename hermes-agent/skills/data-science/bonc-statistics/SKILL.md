@@ -1,24 +1,27 @@
 ---
 name: bonc-statistics
 description: >
-  BONC 统计分析工具集，提供 25 种统计算法，包括回归、t 检验、方差分析、描述统计、
-  频率分析、自相关、交叉表、非参数检验、聚类、生存分析等。采用两工具网关架构：
+  BONC 统计分析工具集，提供 31 种统计算法，包括回归、t 检验、方差分析、描述统计、
+  频率分析、自相关、交叉表、非参数检验、聚类、生存分析、相关分析（Pearson /
+  Spearman / 偏相关）、因子分析、ROC 曲线、距离矩阵等。采用两工具网关架构：
   propose_analysis_plan（检查数据 + 推荐方法 + 返回完整参数 Schema）和
   execute_analysis（通用算法调度器）。当用户需要进行任何统计分析时加载此技能。
-version: 2.1.0
+version: 2.2.0
 author: BONC
 license: MIT
 metadata:
   hermes:
     tags: [bonc, statistics, regression, anova, descriptives, data-analysis, t-test,
-           correlation, frequencies, crosstabs, acf, clustering, survival]
+           correlation, frequencies, crosstabs, acf, clustering, survival,
+           pearson, spearman, partial-correlation, factor-analysis, roc, distance,
+           dimensionality-reduction, diagnostic]
     category: data-science
     requires_plugin: boncml-stat-tools
 ---
 
 # BONC 统计分析工具（两工具架构）
 
-本地运行的高保真统计算法引擎，25 种算法通过两工具网关架构提供。
+本地运行的高保真统计算法引擎，31 种算法通过两工具网关架构提供。
 
 ## 工作流（必须按此顺序）
 
@@ -50,7 +53,7 @@ metadata:
 }
 ```
 
-## 可用算法（25 种）
+## 可用算法（31 种）
 
 | 算法名 (recommended_tool) | 分析类型 | 典型用途 |
 |------|------------------|---------|
@@ -76,10 +79,15 @@ metadata:
 | run_km | Kaplan-Meier | 生存曲线估计 |
 | run_eda | 探索性分析 | 数据分布探索 |
 | run_mresp | 多响应分析 | 多选题频率统计 |
-| run_brkdwn | 分组描述统计 | 分组均值/标准差/偏度/峰度 |
 | run_mva | 缺失值分析 | 缺失模式与统计 |
 | run_ratios | 比率分析 | 分组比率统计 |
 | run_market | 正交设计 | 实验设计与正交表 |
+| run_pearson | 皮尔逊相关 | 双变量线性相关 + 显著性 |
+| run_spearman | 斯皮尔曼秩相关 | 非参数秩相关（含 Kendall tau-b） |
+| run_partial | 偏相关 | 控制混杂变量后的净相关 |
+| run_factor | 因子分析 | 主成分提取 / 降维 / KMO-Bartlett |
+| run_roc | ROC 曲线 | 二分类诊断 / 阈值评估 / AUC |
+| run_distance | 距离矩阵 | 个案或变量间邻近度（聚类输入） |
 | inspect_dataset | 数据集检视 | 列信息与基本统计（propose 内部调用） |
 
 ## 环境要求
