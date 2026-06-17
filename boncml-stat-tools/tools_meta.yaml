@@ -11,11 +11,15 @@ run_crstab: "交叉表 列联表 分类变量关联 频数交叉 CROSSTABS produ
 
 run_descriptives: "描述统计 均值 标准差 平均值 概况 总结 descriptive statistics mean 按组计算 By default, MEANS (alias BREAKDOWN) displays means, standard deviations, and group counts for a numeric dependent variable and group counts for a string variable within groups defined by one or more control (independent) variables. Other procedures that display univariate statistics are SUMMARIZE, FREQUENCIES, and DESCRIPTIVES."
 
+run_distance: "距离矩阵 相似度矩阵 邻近度矩阵 个案间距离 变量间距离 欧氏距离 余弦相似度 Jaccard Dice Minkowski Chebyshev Pearson similarity dissimilarity 聚类输入 多维标度 case-level proximity variable-level proximity PROXIMITIES computes a variety of measures of similarity, dissimilarity, or distance between pairs of cases or pairs of variables for moderate-sized datasets (see “Limitations” below). PROXIMITIES matrix output can be used as input to procedures ALSCAL, CLUSTER, and FACTOR."
+
 run_eda: "探索性分析 异常值 箱线图 EDA examine outlier 正态性检验 EXAMINE provides stem-and-leaf plots, histograms, boxplots, normal plots, robust estimates of location, tests of normality, and other descriptive statistics. Separate analyses can be obtained for subgroups of cases."
 
 run_fit: "误差统计 残差 FIT RMSE MAE 预测评估 拟合误差 forecast accuracy FIT displays a variety of descriptive statistics computed from the residual series as an aid in evaluating the goodness of fit of one or more models."
 
 run_frequencies: "频率分布 频数统计 占比 百分比 frequency distribution 比例 比重 直方图 FREQUENCIES produces tables that show frequency counts and percentages of the values of individual variables. You can also use FREQUENCIES to obtain summary statistics tables for both categorical and continuous variables. ."
+
+run_factor: "因子分析 主成分分析 FACTOR performs factor analysis based either on correlations or covariances and using one of the seven extraction methods. FACTOR also accepts matrix input in the form of correlation matrices, covariance matrices, or factor- loading matrices and can write the matrix materials to a matrix data file."
 
 run_genlog: "对数线性模型 log-linear 广义线性模型 分类变量建模 genlog GENLOG is a general procedure for model fitting, hypothesis testing, and parameter estimation for any model that has categorical variables as its major components. As such, GENLOG subsumes a variety of related techniques, including general models of multiway contingency tables, logit models, logistic regression on categorical variables, and quasi- independence models. GENLOG, following the regression approach, uses dummy coding to construct a design matrix for estimation and produces maximum likelihood estimates of parameters by means of the Newton-Raphson algorithm. Since the regression approach uses the original parameter spaces, the parameter estimates correspond to the original levels of the categories and are therefore easier to interpret. HILOGLINEAR, which uses an iterative proportional-fitting algorithm, is more efficient for hierarchical models and useful in model building, but it cannot produce parameter estimates for unsaturated models, does not permit specification of contrasts for parameters, and does not display a correlation matrix of the parameter estimates. The General Loglinear Analysis and Logit Loglinear Analysis dialog boxes are both associated with the GENLOG command. In previous releases, these dialog boxes were associated with the LOGLINEAR command. The LOGLINEAR command is now available only as a syntax command. The differences are described in the discussion of the LOGLINEAR command."
 
@@ -37,11 +41,19 @@ run_nptest: "非参数检验 Mann-Whitney Wilcoxon Kruskal-Wallis 秩检验 nonp
 
 run_oneway: "单因素方差分析 多组比较 one-way ANOVA 事后检验 F检验 三组以上均值 ONEWAY produces a one-way analysis of variance for an interval-level dependent variable by one numeric independent variable that defines the groups for the analysis. Other procedures that perform an analysis of variance are SUMMARIZE, UNIANOVA, and GLM (GLM is available in SPSS® Statistics Standard Edition or the Advanced Statistics Option). Some tests not included in the other procedures are available as options in ONEWAY."
 
+run_partial: "偏相关 控制变量后的相关 PARTIAL CORR produces partial correlation coefficients that describe the relationship between two variables while adjusting for the effects of one or more additional variables. PARTIAL CORR calculates a matrix of Pearson product- moment correlations. PARTIAL CORR can also read the zero-order correlation matrix as input. Other procedures that produce zero-order correlation matrices that can be read by PARTIAL CORR include CORRELATIONS, REGRESSION, DISCRIMINANT, and FACTOR."
+
+run_pearson: "皮尔逊相关 双变量相关 相关系数 显著性检验 线性相关 CORRELATIONS (alias PEARSON CORR) produces Pearson product-moment correlations with significance levels and, optionally, univariate statistics, covariances, and cross-product deviations. Other procedures that produce correlation matrices are PARTIAL CORR, REGRESSION, DISCRIMINANT, and FACTOR."
+
 run_rank: "排名 秩 百分位 rank transform 排序 等级 RANK produces new variables containing ranks, normal scores, and Savage and related scores for numeric variables."
+
+run_roc: "ROC曲线 受试者工作特征 诊断 准确率 AUC 敏感度 真阳性率 特异度 真阴性率 阳性 阴性 二分类 金标准 cutoff 阈值 区分能力 ROC curve receiver operating characteristic area under curve diagnostic accuracy sensitivity specificity true positive rate true negative rate positive negative binary classifier gold standard cutoff threshold discrimination ROC produces a receiver operating characteristic (ROC) curve and an estimate of the area under the curve."
 
 run_ratios: "比率分析 比值 ratio statistics 分子 分母 比例 均值比 RATIO STATISTICS provides a variety of descriptive statistics for the ratio between two variables."
 
 run_regression: "回归 线性回归 预测 影响因素 回归分析 regression linear 自变量 因变量 R方 建模 REGRESSION calculates multiple regression equations and associated statistics and plots. REGRESSION also calculates collinearity diagnostics, predicted values, residuals, measures of fit and influence, and several statistics based on these measures."
+
+run_spearman: "斯皮尔曼相关 肯德尔相关 等级相关 秩相关 非参数相关 NONPAR CORR computes two rank-order correlation coefficients, Spearman’s rho and Kendall’s tau-b, with their significance levels. You can obtain one or both coefficients. NONPAR CORR automatically computes the ranks and stores the cases in memory. Therefore, memory requirements are directly proportional to the number of cases that are being analyzed."
 
 run_sur: "生存分析 生命表 survival Kaplan-Meier 风险 存活率 死亡率 SURVIVAL produces actuarial life tables, plots, and related statistics for examining the length of time to the occurrence of an event, often known as survival time. Cases can be classified into groups for separate analyses and comparisons. Time intervals can be calculated with the BONC® SPSS® Statistics date- and time-conversion functions —for example, CTIME.DAYS or YRMODA. For a closely related alternative nonparametric analysis of survival times using the product-limit Kaplan-Meier estimator, see the KM command. For an analysis of survival times with covariates, including time-dependent covariates, see the COXREG command."
 
