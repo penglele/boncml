@@ -1,12 +1,14 @@
 ---
 name: bonc-statistics
 description: >
-  BONC 统计分析工具集，提供 31 种统计算法，包括回归、t 检验、方差分析、描述统计、
-  频率分析、自相关、交叉表、非参数检验、聚类、生存分析、相关分析（Pearson /
-  Spearman / 偏相关）、因子分析、ROC 曲线、距离矩阵等。采用两工具网关架构：
+  BONC 统计分析工具集，提供 45 种统计算法，包括回归、t 检验、方差分析、描述统计、
+  频率分析、自相关、交叉表、非参数检验、聚类、生存分析、相关分析、因子分析、
+  ROC 曲线、距离矩阵、Cox 比例风险回归、判别分析、决策树、有序/多项 Logistic
+  回归、信度分析、多变量方差分析、分类主成分/回归、层次聚类、对应分析、典型
+  相关、时序曲线拟合、谱分析等。采用两工具网关架构：
   propose_analysis_plan（检查数据 + 推荐方法 + 返回完整参数 Schema）和
   execute_analysis（通用算法调度器）。当用户需要进行任何统计分析时加载此技能。
-version: 2.2.0
+version: 2.3.0
 author: BONC
 license: MIT
 metadata:
@@ -14,14 +16,18 @@ metadata:
     tags: [bonc, statistics, regression, anova, descriptives, data-analysis, t-test,
            correlation, frequencies, crosstabs, acf, clustering, survival,
            pearson, spearman, partial-correlation, factor-analysis, roc, distance,
-           dimensionality-reduction, diagnostic]
+           dimensionality-reduction, diagnostic,
+           cox-regression, discriminant-analysis, decision-tree,
+           ordinal-logistic, multinomial-logistic, reliability, manova,
+           catpca, hierarchical-clustering, correspondence-analysis,
+           canonical-correlation, curve-fitting, spectral-analysis]
     category: data-science
     requires_plugin: boncml-stat-tools
 ---
 
 # BONC 统计分析工具（两工具架构）
 
-本地运行的高保真统计算法引擎，31 种算法通过两工具网关架构提供。
+本地运行的高保真统计算法引擎，45 种算法通过两工具网关架构提供。
 
 ## 工作流（必须按此顺序）
 
@@ -53,7 +59,7 @@ metadata:
 }
 ```
 
-## 可用算法（31 种）
+## 可用算法（45 种）
 
 | 算法名 (recommended_tool) | 分析类型 | 典型用途 |
 |------|------------------|---------|
@@ -88,6 +94,20 @@ metadata:
 | run_factor | 因子分析 | 主成分提取 / 降维 / KMO-Bartlett |
 | run_roc | ROC 曲线 | 二分类诊断 / 阈值评估 / AUC |
 | run_distance | 距离矩阵 | 个案或变量间邻近度（聚类输入） |
+| run_coxreg | Cox 比例风险回归 | 生存分析（带协变量的风险模型） |
+| run_dscrmn | 判别分析 | 多组线性分类、典型判别函数 |
+| run_dtree | 决策树 | CHAID/CRT/QUEST 分类树 |
+| run_plum | 有序 Logistic 回归 | 有序等级因变量回归（PLUM） |
+| run_reliab | 信度分析 | Cronbach α / ICC / 重复测量方差 |
+| run_manova | 多变量方差分析 | 多因变量多元检验（Pillai/Wilks/Hotelling/Roy） |
+| run_catpca | 分类主成分分析 | 类别变量最优量化 PCA |
+| run_catreg | 分类回归 | 混合尺度（名义/有序/连续）变量回归 |
+| run_clustr | 层次聚类 | Ward/平均/最远 系统聚类 + 簇归属 |
+| run_homals | 多重对应分析 | 名义变量同质性分析、类别量化 |
+| run_overal | 非线性典型相关 | 多变量集合的典型相关（OVERALS） |
+| run_extrap | 时序曲线拟合/指数平滑 | 趋势曲线（线性/二次/指数…）+ 平滑预测 |
+| run_spctrl | 谱分析 | 频域周期图 + 谱密度（SPECTRA） |
+| run_nomreg | 多项 Logistic 回归 | 无序分类因变量回归（NOMREG） |
 | inspect_dataset | 数据集检视 | 列信息与基本统计（propose 内部调用） |
 
 ## 环境要求
