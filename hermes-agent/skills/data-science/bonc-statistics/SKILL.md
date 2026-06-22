@@ -123,7 +123,7 @@ metadata:
 **处理流程**：
 1. 先调用 propose 获取推荐，检查 `confidence` 字段
 2. 若 confidence < 0.6 或推荐工具明显不符用户意图 → **根据领域知识手动覆盖**
-3. 手动覆盖时，直接读取对应算法模块获取完整 Schema：`algorithms/<algo>.py`（如 `algorithms/ttest.py`），每个模块都包含 `schema` dict 和 `run()` 函数签名
+3. 手动覆盖时，**不要读 `algorithms/<algo>.py`**（生产环境是 Cython .so 部署，没有 .py 源码，读了会报错）。改用 `propose_analysis_plan` 返回结果里的 `tool_schemas` 字段——它已包含候选工具的完整 JSON Schema；或在 research_question 里**明确算法类型**（如"层次聚类""Ward"而非泛"聚类"），让检索重新命中正确工具
 4. 参数填写仍须参照 Schema 中的 `required` 和 `properties`，不可猜测
 
 ## 故障排除
