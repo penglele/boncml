@@ -15,10 +15,10 @@ BONC DSS Statistics 是由北京东方国信科技股份有限公司基于 IBM S
 三者既可独立使用，也可组合：**Workspace** 可将统计分析、方案撰写、评审等任务组织成 Spec → Issue → DAG → Artifacts 的流水线，调度包含统计 Agent 在内的多个智能体协同完成端到端任务。
 
 > 📑 **各产品详细文档：**
-> - [BONC DSS Statistics 桌面版](./DESKTOP_README.md) — 下载、授权码、操作视频
-> - [BONCML AI 统计分析 Agent（AutoDL 云端版）](./BONCML_AGENT_README.md) — 自然语言交互、快速开始、示例与常见问题
-> - [BONCML Workspace 多 Agent 协作平台](./WORKSPACE_README.md) — Spec 驱动编排、DAG 任务可视化、Runtime 监控
-> - [支持的统计分析能力（45 个算法）](./ALGORITHMS.md) — 全量算法 CLI 命令与示例
+> - [BONC DSS Statistics 桌面版](https://github.com/penglele/boncml/blob/main/docs/DESKTOP_README.md) — 下载、授权码、操作视频
+> - [BONCML AI 统计分析 Agent（AutoDL 云端版）](https://github.com/penglele/boncml/blob/main/docs/BONCML_AGENT_README.md) — 自然语言交互、快速开始、示例与常见问题
+> - [BONCML Workspace 多 Agent 协作平台](https://github.com/penglele/boncml/blob/main/docs/WORKSPACE_README.md) — Spec 驱动编排、DAG 任务可视化、Runtime 监控
+> - [支持的统计分析能力（45 个算法）](https://github.com/penglele/boncml/blob/main/docs/ALGORITHMS.md) — 全量算法 CLI 命令与示例
 
 ---
 
@@ -68,7 +68,7 @@ BONC DSS Statistics 是由北京东方国信科技股份有限公司基于 IBM S
 - **可视化** — 内置可视化输出（箱线图、聚类条形图等，持续扩展中）
 - **多 Agent 协作编排（Workspace）** — Spec 驱动的任务编排，需求澄清、方案设计、DAG 调度、评审交付全流程自动化
 
-完整的 45 个算法命令清单详见 → [支持的统计分析能力（45 个算法）](./ALGORITHMS.md)
+完整的 45 个算法命令清单详见 → [支持的统计分析能力（45 个算法）](https://github.com/penglele/boncml/blob/main/docs/ALGORITHMS.md)
 
 ---
 
